@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+    
+    
+<head>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P27B3SF7PC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P27B3SF7PC');
+</script>    
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>yomi</title>
+  <link rel="shortcut icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"> 
+</head>
+
+    
+<body>
+    
+    <div class="snslink">
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <i class="fa fa-circle fa-stack-2x circle-twitter"></i>
+           <a href="https://twitter.com/GekkouTukuyomi" target="_blank"><i class="fab fa-twitter fa-stack-1x fa-inverse"></i></a>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <i class="fa fa-circle fa-stack-2x circle-youtube"></i>
+           <a href="https://www.youtube.com/@tukuyomich.2456/featured" target="_blank"><i class="fab fa-youtube fa-stack-1x"></i></a>
+        </span> 
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <a href="https://nao153944.github.io/kaguya/"><img src="kaguya.png" width="65" height="65"></a>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <a href="https://nao153944.github.io/mila/"><img src="mila.png" width="65" height="65"></a>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <a href="https://nao153944.github.io/fubu/"><img src="fubu.png" width="65" height="65"></a>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg">
+           <i class="fa fa-circle fa-stack-2x circle-trash"></i>
+           <i class="far fa-trash-alt fa-stack-1x fa-inverse" onclick="ConfirmAlert()"></i>
+        </span> 
+        
+        <span class="fa-stack fa-2x fa-lg" onclick="scrolltop()">
+           <i class="fa fa-circle fa-stack-2x circle-up"></i>
+           <i class="fas fas fa-chevron-up fa-stack-1x fa-inverse"></i>
+        </span>
+        
+        <span class="fa-stack fa-2x fa-lg" onclick="scrollunder()">
+           <i class="fa fa-circle fa-stack-2x circle-up"></i>
+           <i class="fas fas fa-chevron-down fa-stack-1x fa-inverse"></i>
+        </span>
+        
+    </div>
+    
+    
+    <div class ="favorite">
+       <input type="checkbox" class="favorite-checkbox" id="favorite" onclick="FavoriteCheck()" >
+       <label class="c-text-favorite" for="favorite-checkbox">お気に入り</label>
+    </div>
+    
+    
+    <div class="form">
+      <input type="search" inputmode="search" class="select4" id="select4" placeholder="曲名を入力" onchange="SelectCheck()">
+    </div>
+    
+    
+    <div class ="select">
+       <label class="c-text-select">歌手名</label>
+       <select id="select3" class="select3" onchange="SelectCheck()">
+          <option value="none">選択なし</option>
+                  <option value="いきものがかり">いきものがかり</option>
+                  <option value="大塚愛">大塚愛</option>
+                  <option value="Official髭男dism">Official髭男dism</option>
+                  <option value="Kai">Kai</option>
+                  <option value="香椎モイミ">香椎モイミ</option>
+                  <option value="神宿">神宿</option>
+                  <option value="神田沙也加,稲葉菜月,諸星すみれ">神田沙也加,稲葉菜月,諸星すみれ</option>
+                  <option value="ゴールデンボンバー">ゴールデンボンバー</option>
+                  <option value="Silent Siren">Silent Siren</option>
+                  <option value="桜高軽音部">桜高軽音部</option>
+                  <option value="SEKAI NO OWARI">SEKAI NO OWARI</option>
+                  <option value="戦慄かなの">戦慄かなの</option>
+                  <option value="超ときめき♡宣伝部">超ときめき♡宣伝部</option>
+                  <option value="Tensions">Tensions</option>
+                  <option value="秦基博">秦基博</option>
+                  <option value="back number">back number</option>
+                  <option value="HoneyWorks">HoneyWorks</option>
+                  <option value="平井堅">平井堅</option>
+                  <option value="広瀬香美">広瀬香美</option>
+                  <option value="FRUITS ZIPPER">FRUITS ZIPPER</option>
+                  <option value="松谷祐子">松谷祐子</option>
+                  <option value="MISIA">MISIA</option>
+                  <option value="もさを。">もさを。</option>
+                  <option value="米津玄師">米津玄師</option>
+                  <option value="レミオロメン">レミオロメン</option>
+                <optgroup label=""></optgroup>
+       </select>
+  
+
+       <label class="c-text-select">配信日</label>
+       <select id="select1" class="select1" onchange="SelectCheck()">
+          <option value="none">選択なし</option>
+                  <option value="2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談">2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談</option>
+                  <option value="2023/01/15【甘々に歌ってみた】チョコレーション🍫【オリジナルMV/月光ツクヨミ】#新人vtuber">2023/01/15【甘々に歌ってみた】チョコレーション🍫【オリジナルMV/月光ツクヨミ】#新人vtuber</option>
+                  <option value="2022/12/25【🔴完全ソロで歌枠リレー】史上初?!本気のクリぼっちを見よ!!🎄初見大歓迎⛄【新人Vtuber / エアプロ】#live #クリスマス">2022/12/25【🔴完全ソロで歌枠リレー】史上初?!本気のクリぼっちを見よ!!🎄初見大歓迎⛄【新人Vtuber / エアプロ】#live #クリスマス</option>
+                  <option value="2022/11/22【🔴誕生日前夜祭】冬の定番ソング♪歌枠＆重大発表🎊✨【生配信/ 新人Vtuber 】 #月光ツクヨミ #重大報告　#song">2022/11/22【🔴誕生日前夜祭】冬の定番ソング♪歌枠＆重大発表🎊✨【生配信/ 新人Vtuber 】 #月光ツクヨミ #重大報告　#song</option>
+                  <option value="2022/10/17【🔴初歌枠】TikTokで流行りの曲メドレー🎤🎶一カ月記念配信✨【新人Vtuber / エアプロ】#live #ヨミの流行り研究所">2022/10/17【🔴初歌枠】TikTokで流行りの曲メドレー🎤🎶一カ月記念配信✨【新人Vtuber / エアプロ】#live #ヨミの流行り研究所</option>
+                <optgroup label=""></optgroup>
+       </select>
+    </div>
+
+    <div class ="radio">
+       <input class="r-button" type="radio" name="q1" value="デフォルト" onclick="RadioCheck()" checked>
+          <label class="r-text">デフォルト</label>
+       <input class="r-button" type="radio" name="q1" value="配信順" onclick="RadioCheck()">
+          <label class="r-text">配信順</label>
+       <input class="r-button" type="radio" name="q1" value="歌唱回数順" onclick="RadioCheck()">
+          <label class="r-text">歌唱回数順</label>
+    </div>
+
+
+<div class ="content" id="content">
+
+              <div id="c-1-1" class="1">
+           <input type="checkbox" class="checkbox" id="1-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-1-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=INjeIMI70Pc\x26t=392s')">
+              <c-text-title id="al-c-1-1" class="FRUITS ZIPPER">わたしの一番かわいいところ</c-text-title><br>
+              <c-text-youtube>2022/10/17【🔴初歌枠】TikTokで流行りの曲メドレー🎤🎶一カ月記念配信✨【新人Vtuber / エアプロ】#live #ヨミの流行り研究所</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-2-1" class="2">
+           <input type="checkbox" class="checkbox" id="2-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-2-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=INjeIMI70Pc\x26t=1021s')">
+              <c-text-title id="al-c-2-1" class="香椎モイミ">キャットラビング</c-text-title><br>
+              <c-text-youtube>2022/10/17【🔴初歌枠】TikTokで流行りの曲メドレー🎤🎶一カ月記念配信✨【新人Vtuber / エアプロ】#live #ヨミの流行り研究所</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-3-1" class="3">
+           <input type="checkbox" class="checkbox" id="3-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-3-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=INjeIMI70Pc\x26t=1604s')">
+              <c-text-title id="al-c-3-1" class="神宿">グリズリーに襲われたら♡</c-text-title><br>
+              <c-text-youtube>2022/10/17【🔴初歌枠】TikTokで流行りの曲メドレー🎤🎶一カ月記念配信✨【新人Vtuber / エアプロ】#live #ヨミの流行り研究所</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-4-1" class="4">
+           <input type="checkbox" class="checkbox" id="4-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-4-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=INjeIMI70Pc\x26t=2312s')">
+              <c-text-title id="al-c-4-1" class="戦慄かなの">moreきゅん奴隷</c-text-title><br>
+              <c-text-youtube>2022/10/17【🔴初歌枠】TikTokで流行りの曲メドレー🎤🎶一カ月記念配信✨【新人Vtuber / エアプロ】#live #ヨミの流行り研究所</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-5-1" class="5">
+           <input type="checkbox" class="checkbox" id="5-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-5-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=INjeIMI70Pc\x26t=2763s')">
+              <c-text-title id="al-c-5-1" class="Official髭男dism">ミックスナッツ</c-text-title><br>
+              <c-text-youtube>2022/10/17【🔴初歌枠】TikTokで流行りの曲メドレー🎤🎶一カ月記念配信✨【新人Vtuber / エアプロ】#live #ヨミの流行り研究所</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-6-1" class="6">
+           <input type="checkbox" class="checkbox" id="6-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-6-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=INjeIMI70Pc\x26t=3333s')">
+              <c-text-title id="al-c-6-1" class="超ときめき♡宣伝部">すきっ！</c-text-title><br>
+              <c-text-youtube>2022/10/17【🔴初歌枠】TikTokで流行りの曲メドレー🎤🎶一カ月記念配信✨【新人Vtuber / エアプロ】#live #ヨミの流行り研究所</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-7-1" class="7">
+           <input type="checkbox" class="checkbox" id="7-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-7-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=INjeIMI70Pc\x26t=4316s')">
+              <c-text-title id="al-c-7-1" class="Kai">さよならプリンセス</c-text-title><br>
+              <c-text-youtube>2022/10/17【🔴初歌枠】TikTokで流行りの曲メドレー🎤🎶一カ月記念配信✨【新人Vtuber / エアプロ】#live #ヨミの流行り研究所</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-8-1" class="8">
+           <input type="checkbox" class="checkbox" id="8-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-8-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=RbWgnHRsTx8\x26t=674s')">
+              <c-text-title id="al-c-8-1" class="広瀬香美">ロマンスの神様</c-text-title><br>
+              <c-text-youtube>2022/11/22【🔴誕生日前夜祭】冬の定番ソング♪歌枠＆重大発表🎊✨【生配信/ 新人Vtuber 】 #月光ツクヨミ #重大報告　#song</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-9-1" class="9">
+           <input type="checkbox" class="checkbox" id="9-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-9-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=RbWgnHRsTx8\x26t=1624s')">
+              <c-text-title id="al-c-9-1" class="MISIA">Everything</c-text-title><br>
+              <c-text-youtube>2022/11/22【🔴誕生日前夜祭】冬の定番ソング♪歌枠＆重大発表🎊✨【生配信/ 新人Vtuber 】 #月光ツクヨミ #重大報告　#song</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-10-1" class="10">
+           <input type="checkbox" class="checkbox" id="10-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-10-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=RbWgnHRsTx8\x26t=2672s')">
+              <c-text-title id="al-c-10-1" class="大塚愛">甘えんぼ</c-text-title><br>
+              <c-text-youtube>2022/11/22【🔴誕生日前夜祭】冬の定番ソング♪歌枠＆重大発表🎊✨【生配信/ 新人Vtuber 】 #月光ツクヨミ #重大報告　#song</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-11-1" class="11">
+           <input type="checkbox" class="checkbox" id="11-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-11-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=RbWgnHRsTx8\x26t=3360s')">
+              <c-text-title id="al-c-11-1" class="back number">クリスマスソング</c-text-title><br>
+              <c-text-youtube>2022/11/22【🔴誕生日前夜祭】冬の定番ソング♪歌枠＆重大発表🎊✨【生配信/ 新人Vtuber 】 #月光ツクヨミ #重大報告　#song</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-12-1" class="12">
+           <input type="checkbox" class="checkbox" id="12-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-12-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=RbWgnHRsTx8\x26t=4170s')">
+              <c-text-title id="al-c-12-1" class="桜高軽音部">ふわふわ時間</c-text-title><br>
+              <c-text-youtube>2022/11/22【🔴誕生日前夜祭】冬の定番ソング♪歌枠＆重大発表🎊✨【生配信/ 新人Vtuber 】 #月光ツクヨミ #重大報告　#song</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-13-1" class="13">
+           <input type="checkbox" class="checkbox" id="13-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-13-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=RbWgnHRsTx8\x26t=5816s')">
+              <c-text-title id="al-c-13-1" class="もさを。">ぎゅっと。</c-text-title><br>
+              <c-text-youtube>2022/11/22【🔴誕生日前夜祭】冬の定番ソング♪歌枠＆重大発表🎊✨【生配信/ 新人Vtuber 】 #月光ツクヨミ #重大報告　#song</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-14-1" class="14">
+           <input type="checkbox" class="checkbox" id="14-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-14-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=X5rj7WZbtVA\x26t=640s')">
+              <c-text-title id="al-c-14-1" class="">We Wish You a Merry Christmas</c-text-title><br>
+              <c-text-youtube>2022/12/25【🔴完全ソロで歌枠リレー】史上初?!本気のクリぼっちを見よ!!🎄初見大歓迎⛄【新人Vtuber / エアプロ】#live #クリスマス</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-15-1" class="15">
+           <input type="checkbox" class="checkbox" id="15-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-15-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=X5rj7WZbtVA\x26t=1438s')">
+              <c-text-title id="al-c-15-1" class="ゴールデンボンバー">女々しくて</c-text-title><br>
+              <c-text-youtube>2022/12/25【🔴完全ソロで歌枠リレー】史上初?!本気のクリぼっちを見よ!!🎄初見大歓迎⛄【新人Vtuber / エアプロ】#live #クリスマス</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-16-1" class="16">
+           <input type="checkbox" class="checkbox" id="16-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-16-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=X5rj7WZbtVA\x26t=2343s')">
+              <c-text-title id="al-c-16-1" class="">きよしこの夜</c-text-title><br>
+              <c-text-youtube>2022/12/25【🔴完全ソロで歌枠リレー】史上初?!本気のクリぼっちを見よ!!🎄初見大歓迎⛄【新人Vtuber / エアプロ】#live #クリスマス</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-17-1" class="17">
+           <input type="checkbox" class="checkbox" id="17-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-17-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=X5rj7WZbtVA\x26t=3090s')">
+              <c-text-title id="al-c-17-1" class="HoneyWorks">可愛くてごめん</c-text-title><br>
+              <c-text-youtube>2022/12/25【🔴完全ソロで歌枠リレー】史上初?!本気のクリぼっちを見よ!!🎄初見大歓迎⛄【新人Vtuber / エアプロ】#live #クリスマス</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-18-1" class="18">
+           <input type="checkbox" class="checkbox" id="18-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-18-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=X5rj7WZbtVA\x26t=3868s')">
+              <c-text-title id="al-c-18-1" class="神田沙也加,稲葉菜月,諸星すみれ">雪だるまつくろう</c-text-title><br>
+              <c-text-youtube>2022/12/25【🔴完全ソロで歌枠リレー】史上初?!本気のクリぼっちを見よ!!🎄初見大歓迎⛄【新人Vtuber / エアプロ】#live #クリスマス</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-19-1" class="19">
+           <input type="checkbox" class="checkbox" id="19-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-19-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=X5rj7WZbtVA\x26t=4882s')">
+              <c-text-title id="al-c-19-1" class="">ジングルベル</c-text-title><br>
+              <c-text-youtube>2022/12/25【🔴完全ソロで歌枠リレー】史上初?!本気のクリぼっちを見よ!!🎄初見大歓迎⛄【新人Vtuber / エアプロ】#live #クリスマス</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-20-1" class="20">
+           <input type="checkbox" class="checkbox" id="20-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-20-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=1YVde8sE-WI')">
+              <c-text-title id="al-c-20-1" class="Tensions">チョコレーション</c-text-title><br>
+              <c-text-youtube>2023/01/15【甘々に歌ってみた】チョコレーション🍫【オリジナルMV/月光ツクヨミ】#新人vtuber</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-21-1" class="21">
+           <input type="checkbox" class="checkbox" id="21-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-21-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=-Hra7HJ8d_o\x26t=641s')">
+              <c-text-title id="al-c-21-1" class="Silent Siren">チェリボム</c-text-title><br>
+              <c-text-youtube>2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-22-1" class="22">
+           <input type="checkbox" class="checkbox" id="22-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-22-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=-Hra7HJ8d_o\x26t=1427s')">
+              <c-text-title id="al-c-22-1" class="レミオロメン">3月9日</c-text-title><br>
+              <c-text-youtube>2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-23-1" class="23">
+           <input type="checkbox" class="checkbox" id="23-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-23-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=-Hra7HJ8d_o\x26t=2467s')">
+              <c-text-title id="al-c-23-1" class="いきものがかり">YELL</c-text-title><br>
+              <c-text-youtube>2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-24-1" class="24">
+           <input type="checkbox" class="checkbox" id="24-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-24-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=-Hra7HJ8d_o\x26t=3505s')">
+              <c-text-title id="al-c-24-1" class="秦基博">鱗(うろこ)</c-text-title><br>
+              <c-text-youtube>2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-25-1" class="25">
+           <input type="checkbox" class="checkbox" id="25-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-25-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=-Hra7HJ8d_o\x26t=4600s')">
+              <c-text-title id="al-c-25-1" class="平井堅">トドカナイカラ</c-text-title><br>
+              <c-text-youtube>2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-26-1" class="26">
+           <input type="checkbox" class="checkbox" id="26-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-26-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=-Hra7HJ8d_o\x26t=4785s')">
+              <c-text-title id="al-c-26-1" class="米津玄師">アイネクライネ</c-text-title><br>
+              <c-text-youtube>2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-27-1" class="27">
+           <input type="checkbox" class="checkbox" id="27-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-27-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=-Hra7HJ8d_o\x26t=4927s')">
+              <c-text-title id="al-c-27-1" class="SEKAI NO OWARI">RAIN</c-text-title><br>
+              <c-text-youtube>2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談</c-text-youtube>
+           </button>
+        </div>
+
+              <div id="c-28-1" class="28">
+           <input type="checkbox" class="checkbox" id="28-1" onclick="Save()" >
+           <button class="c-button" type="button" onclick="gtag('event', 'yomic-28-1');OpenWindow('https:\/\/www.youtube.com\/watch?v=-Hra7HJ8d_o\x26t=5715s')">
+              <c-text-title id="al-c-28-1" class="松谷祐子">ラムのラブソング</c-text-title><br>
+              <c-text-youtube>2023/03/16【🔴歌枠】デビューから半年記念🌟君たち出会ってくれてありがとう💖【新人Vtuber / エアプロ】#live #雑談</c-text-youtube>
+           </button>
+        </div>
+
+      
+
+    </div>
+
+   <script type="text/javascript">
+       
+       
+var list = new Array(
+"1-1",
+"2-1",
+"3-1",
+"4-1",
+"5-1",
+"6-1",
+"7-1",
+"8-1",
+"9-1",
+"10-1",
+"11-1",
+"12-1",
+"13-1",
+"14-1",
+"15-1",
+"16-1",
+"17-1",
+"18-1",
+"19-1",
+"20-1",
+"21-1",
+"22-1",
+"23-1",
+"24-1",
+"25-1",
+"26-1",
+"27-1",
+"28-1",
+);
+
+
+
+
+
+var rh = new Array(
+"1-1",
+"2-1",
+"3-1",
+"4-1",
+"5-1",
+"6-1",
+"7-1",
+"8-1",
+"9-1",
+"10-1",
+"11-1",
+"12-1",
+"13-1",
+"14-1",
+"15-1",
+"16-1",
+"17-1",
+"18-1",
+"19-1",
+"20-1",
+"21-1",
+"22-1",
+"23-1",
+"24-1",
+"25-1",
+"26-1",
+"27-1",
+"28-1",
+);
+       
+       
+      var loadcontent;
+      var loadcheckbox;
+      var loadlist;
+       
+      window.onload = firstscript();
+      
+       
+       
+      function firstscript(){
+         var i=0;
+         while( i<list.length ){
+            loadlist = JSON.parse(localStorage.getItem('yomisave'+list[i]));
+            if(loadlist == "true"){
+               loadcheckbox = document.getElementById(list[i]);
+               loadcheckbox.checked = true;
+            }
+            i++;
+         }
+          
+         loadlist = JSON.parse(localStorage.getItem('yomisavefavorite'));
+         if(loadlist == "true"){
+            loadcheckbox = document.getElementById('favorite');
+            loadcheckbox.checked = true;
+            FavoriteOn();
+         }
+          
+         loadlist = JSON.parse(localStorage.getItem('yomisaveradio')); 
+         if(loadlist == "1"){
+            loadcheckbox = document.getElementsByName('q1');
+            loadcheckbox[1].checked = true;
+         } 
+         else if(loadlist == "2"){
+            loadcheckbox = document.getElementsByName('q1');
+            loadcheckbox[2].checked = true;
+         } 
+         RadioCheck();
+      }
+       
+       
+       
+      function Save() {
+          var i = 0;
+          while( i<list.length ){
+             loadcheckbox = document.getElementById(list[i]);
+             if(loadcheckbox.checked == true){
+                  localStorage.setItem('yomisave'+list[i],JSON.stringify("true"));
+             }
+             else{
+                 loadlist = JSON.parse(localStorage.getItem('yomisave'+list[i]));
+                 if(loadlist == "true"){
+                    localStorage.removeItem('yomisave'+list[i]);
+                 }
+             }
+             i++;
+          }
+      }
+      
+      
+      function ConfirmAlert(){
+          var message = "保存データを削除しますか？";
+          if(confirm(message)){
+             Delete();
+          }
+      } 
+       
+      function Delete(){
+          var i = 0;
+          while( i<list.length ){
+             localStorage.removeItem('yomisave'+list[i]);
+             loadcheckbox = document.getElementById(list[i]);
+             if(loadcheckbox.checked == true){
+                  loadcheckbox.checked = false;
+             }
+             i++;
+          }
+          localStorage.removeItem('yomisavefavorite');
+          localStorage.removeItem('yomisaveradio');
+      } 
+       
+       
+      function FavoriteCheck() {
+         loadcheckbox = document.getElementById("favorite");
+         if(loadcheckbox.checked == true){
+            FavoriteOn(); 
+         }
+         else{
+            FavoriteOff();
+         }
+         SelectCheck();
+      } 
+    
+       
+      function FavoriteOn() {
+          var i = 0;
+          while( i<list.length ){
+             loadlist = JSON.parse(localStorage.getItem('yomisave'+list[i]));
+             if(loadlist == "true"){
+                loadcontent = document.getElementById("c-"+list[i]);
+                loadcontent.classList.remove("c-active-none");
+             }
+             else{
+                loadcontent = document.getElementById("c-"+list[i]);
+                loadcontent.classList.add("c-active-none");
+             }
+             i++;
+          }
+          localStorage.setItem('yomisavefavorite',JSON.stringify("true"));
+      }
+       
+      function FavoriteOff() {
+          var i = 0;
+          while( i<list.length ){
+                loadcontent = document.getElementById("c-"+list[i]);
+                loadcontent.classList.remove("c-active-none");
+             i++;
+          }
+          localStorage.removeItem('yomisavefavorite');
+      }
+        
+      
+      function SelectCheck() {
+         var select1check = document.getElementById("select1");
+         var select2check = document.getElementById("select4");
+         var select3check = document.getElementById("select3");
+         var i = 0;
+         while( i<list.length ){
+            loadcontent = document.getElementById("c-"+list[i]);
+            loadcontent.classList.remove("c-select-none");
+            loadcontent.classList.remove("c-select2-none");
+            loadcontent.classList.remove("c-select3-none");
+            i++;
+         }  
+         if(select1check.value != "none"){
+            var i = 0;
+            while( i<list.length ){
+               loadcontent = document.getElementById("c-"+list[i]);
+               if(loadcontent.textContent.indexOf(select1check.value) == -1 ){
+                  loadcontent.classList.add("c-select-none");
+               }
+               i++;
+            }
+         }
+         if(select2check.value != "" || select2check.value != null){
+            var i = 0;
+            while( i<list.length ){
+               loadcontent = document.getElementById("al-c-"+list[i]);
+               if(loadcontent.textContent.indexOf(select2check.value) == -1){
+                  loadcontent = document.getElementById("c-"+list[i]);
+                  loadcontent.classList.add("c-select2-none");       
+               }
+               i++
+            }
+         }
+         if(select3check.value != "none"){
+            var i = 0;
+            while( i<list.length ){
+               loadcontent = document.getElementById("al-c-"+list[i]);
+               if(loadcontent.classList != select3check.value){
+                   loadcontent = document.getElementById("c-"+list[i]);
+                   loadcontent.classList.add("c-select3-none");
+               }
+               i++;
+            }
+         }
+         RadioCheck();
+      } 
+       
+       
+      
+      function RadioCheck(){
+         var radiocheck = document.getElementsByName('q1'); 
+         var i = 0;
+         while(i<radiocheck.length){
+            if(radiocheck[i].checked == true){
+               radiocheck = radiocheck[i].value;
+            }
+            i++;
+         }
+         var element = document.getElementById("content");
+
+         if(radiocheck == "デフォルト"){
+             var i=0;
+             while(i<list.length){
+                var elementload = document.getElementById("c-"+ list[i]);
+                element.insertBefore(elementload,element.children[element.lastChild]);
+                i++;
+             }
+             localStorage.removeItem('yomisaveradio');
+             
+         } 
+         else if(radiocheck == "配信順"){
+             var i=0;
+             while(i<rh.length){
+                var elementload = document.getElementById("c-"+ rh[i]);
+                element.insertBefore(elementload,element.children[element.lastChild]);
+                i++;
+             }
+             localStorage.setItem('yomisaveradio',JSON.stringify('1'));
+         }
+         else if(radiocheck == "歌唱回数順"){
+             SCCheck();
+             localStorage.setItem('yomisaveradio',JSON.stringify('2'));
+         }
+      }  
+      
+       
+       
+      function SCCheck(){
+            var scchecklist = new Array();
+            var num,cnt,count=1,sp1,sp2;
+            var sclist = new Array({num,cnt});
+            var splitlist = new Array({sp1,sp2});
+            var i = 0 , l = 0; 
+            while( i<list.length ){
+               loadcontent = document.getElementById("c-"+list[i]);
+               if(loadcontent.classList.contains("c-select-none") || loadcontent.classList.contains("c-select2-none") || 
+                  loadcontent.classList.contains("c-select3-none") || loadcontent.classList.contains("c-select4-none") || 
+                  loadcontent.classList.contains("c-active-none")
+               ){
+                  //console.log("none");
+               }
+               else{
+                  scchecklist[l] = list[i];
+                  var splitlist2 = loadcontent.id.split("-");
+                  splitlist[l] = {sp1:splitlist2[1],sp2:splitlist2[2]}
+                  l++;
+               }
+               i++;
+            }
+          
+            var i = 0 , l = 1 , f = 0;
+            while( l<splitlist.length ){
+                if(splitlist[i].sp1 == splitlist[l].sp1){
+                   count++;
+                }
+                else{
+                   sclist[f] = {num:splitlist[i].sp1 , cnt:count}
+                   f++;
+                   count = 1;
+                }
+                i++;
+                l++;
+            }
+            sclist[f] = {num:splitlist[i].sp1 , cnt:count}
+            sclist.sort((a, b) => b.cnt - a.cnt);
+          
+          
+            var sc = new Array();
+            var l=0 , f=0;
+            while( l<sclist.length ){
+                i = 0;
+                while( i<scchecklist.length ){
+                    loadcontent = document.getElementById("c-"+scchecklist[i]);
+                    if(loadcontent.classList.contains(sclist[l].num)){
+                        sc[f] = scchecklist[i];
+                        f++;
+                    }
+                    i++;
+                }
+                l++;
+            }
+          
+          
+             var i=0;
+             var element = document.getElementById("content");
+             while(i<sc.length){
+                var elementload = document.getElementById("c-"+ sc[i]);
+                element.insertBefore(elementload,element.children[element.lastChild]);
+                i++;
+             }
+      }
+       
+       
+       
+       
+       
+      function scrolltop(){
+         window.scroll({top: 0, behavior: 'smooth'});
+      };  
+       
+      function scrollunder(){
+         var element = document.documentElement;
+         var bottom = element.scrollHeight - element.clientHeight;
+         window.scrollTo({top: bottom, left: 0, behavior: 'smooth'});
+      };   
+       
+       
+       
+      function OpenWindow(url) {
+         window.open(url,"blank","width=800,height=720,left=900,top=100");
+      } 
+       
+       
+       
+       
+   </script>
+    
+
+
+    
+</body>
+    
+    
+    
+    
+    
+</html>
