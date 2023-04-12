@@ -604,6 +604,7 @@ var rh = new Array(
        
       
       function RadioCheck(){
+         RemoveIB();
          var radiocheck = document.getElementsByName('q1'); 
          var i = 0;
          while(i<radiocheck.length){
@@ -680,7 +681,6 @@ var rh = new Array(
             sclist[f] = {num:splitlist[i].sp1 , cnt:count}
             sclist.sort((a, b) => b.cnt - a.cnt);
           
-          
             var sc = new Array();
             var l=0 , f=0;
             while( l<sclist.length ){
@@ -704,7 +704,74 @@ var rh = new Array(
                 element.insertBefore(elementload,element.children[element.lastChild]);
                 i++;
              }
-      }
+          
+          RemoveIB();
+          var eleFirst;
+          var i=0;
+          while(i<list.length){
+              eleFirst = document.getElementById("c-"+list[i]).classList.remove("NoClass");
+              i++;
+          }
+          
+          var iblist = new Array({num,cnt});
+          var i=0 , l=1 , f=0;
+          iblist[f] = {num:sclist[i].num , cnt:sclist[i].cnt}
+          f++;
+          while(l<sclist.length){
+              if(sclist[i].cnt > sclist[l].cnt){
+                 iblist[f] = {num:sclist[l].num , cnt:sclist[l].cnt}
+                 f++; 
+              }
+              i++;
+              l++;
+          }
+
+          
+          i=0;
+          while(i<scchecklist.length){
+              eleFirst = document.getElementById("c-"+scchecklist[i]).classList.add("NoClass");
+              i++;
+          }
+          
+          
+          f=0;
+          while(f<iblist.length){
+             var newElement = document.createElement("div");
+             newElement.classList.add("kaisuu");
+             var newElement2 = document.createElement("kaisuu-text");
+             newElement.appendChild(newElement2);
+             var newContent = document.createTextNode(iblist[f].cnt+"回"); 
+             newElement2.appendChild(newContent);
+
+              var i=0;
+              while(i<list.length){
+                  loadcontent = document.getElementById("c-"+list[i]);
+                  if(loadcontent.classList.contains("NoClass") && loadcontent.classList.contains(iblist[f].num) ){
+                     var ele = loadcontent;
+                     break;
+                  }
+                  else{
+                     i++;  
+                  }
+              }
+             
+             var parentElement = document.getElementsByClassName("content")[0];
+             parentElement.insertBefore(newElement, ele);
+             f++;
+          }
+        }
+     
+          
+      
+       
+      function RemoveIB(){
+             var removecontent = document.getElementsByClassName("kaisuu");
+             if (0 < removecontent.length) {
+                while (removecontent.length) {
+                   removecontent.item(0).remove()
+                }
+             }
+      };  
        
        
        
